@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    name: localhost
+    url: jdbc:mysql://127.0.0.1:3306/joebase?characterEncoding=utf8&useSSL=false&rewriteBatchedStatements=true&nullCatalogMeansCurrent=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    serverTimezone: Asia/Shanghai
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.example.zhou.Model
